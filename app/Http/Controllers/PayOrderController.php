@@ -9,9 +9,7 @@ class PayOrderController extends Controller
 {
     
 
-    public function store(){
-
-        $paymentGateway = new PaymentGateway();
+    public function store(PaymentGateway $paymentGateway){
 
         dd($paymentGateway->charge(5000));
     }
