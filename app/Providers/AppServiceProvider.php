@@ -15,9 +15,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         
-          $this->app->singleton(PaymentGateway::class, function($app){
+          /*$this->app->singleton(PaymentGateway::class, function($app){
               return new PaymentGateway("USD");
-          });
+          });*/
     }
 
     /**
