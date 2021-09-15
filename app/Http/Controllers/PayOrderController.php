@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Billing\BankPaymentGateway;
 use App\Billing\PaymentGateway;
+use App\Billing\PaymentGatewayContract;
 use App\Orders\OrderDetails;
 
 class PayOrderController extends Controller
 {
     
 
-    public function store(OrderDetails $orderDetails){
+    public function store(OrderDetails $orderDetails, PaymentGatewayContract $paymentGateway){
        
-         $orderDetails->allOrderDetails();
-         //Nothing is changed because everytime store method is called it'll have new instance of PaymentGateway
-         //This is by bind(...) function from AppServiceProvider.php
-         
-        dd(PaymentGateway::getInstance()->charge(3000));
+         dd($orderDetails->allOrderDetails(), $paymentGateway->charge(6000));
     }
 }

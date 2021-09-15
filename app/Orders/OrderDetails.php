@@ -3,21 +3,21 @@
 
 namespace App\Orders;
 
-use App\Billing\PaymentGateway;
+use App\Billing\PaymentGatewayContract;
 
 class OrderDetails{
 
-    /*private $paymentGateway;
+    private $paymentGateway;
 
-    public function __construct(PaymentGateway $paymentGateway)
+    public function __construct(PaymentGatewayContract $paymentGateway)
     {
         $this->paymentGateway = $paymentGateway;
-    }*/
+    }
 
     public function allOrderDetails(){
         
-        //$this->paymentGateway->setDiscount(250);
-        PaymentGateway::getInstance()->setDiscount(250);
+        $this->paymentGateway->setDiscount(250);
+        //PaymentGateway::getInstance()->setDiscount(250);
 
         return [
             'name' => 'ABDELAZIZ',
