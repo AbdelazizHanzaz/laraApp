@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PayOrderController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +24,7 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'home']);
 
 Route::get('pay', [PayOrderController::class, 'store']);
+
+Route::get('channels', [ChannelController::class, 'index']);
+
+Route::get('post/create', [PostController::class, 'create']);
