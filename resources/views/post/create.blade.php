@@ -7,15 +7,14 @@
     <title>Create Post</title>
 </head>
 <body>
-    
+
    <h1>Create New Post</h1>
   <form action="#">
     @csrf
-    <select name="channel_id" id="channel_id">
+    <select title="channels" name="channel_id" id="channel_id">
         @foreach ($channels as $channel)
         <option value="{{$channel->id}}">{{$channel->name}}</option>
         @endforeach
-        
     </select>
 
   </form>
